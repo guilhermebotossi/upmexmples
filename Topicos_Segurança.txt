@@ -1,0 +1,6 @@
+-Hash Anti-Tempering
+-One Way ou Two Way Authentication
+-Header Authentication
+-"Criptografia + Salt" da Mensagem
+-TLS Ativo 
+-Garantir o mesmo encoding na entrada e saida
