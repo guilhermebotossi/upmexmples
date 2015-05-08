@@ -1,4 +1,4 @@
-package compressão;
+package compressao;
 
 import java.io.BufferedReader;
 import java.io.File;
