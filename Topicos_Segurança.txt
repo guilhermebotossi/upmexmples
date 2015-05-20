@@ -1,5 +1,5 @@
--Hash Anti-Tempering
--Hash Anti-Tempering + Salt 
+-Hash Anti-Tampering
+-Hash Anti-Tampering + Salt 
 -One Way ou Two Way Authentication
 -Header Authentication
 -"Criptografia + Salt" da Mensagem
