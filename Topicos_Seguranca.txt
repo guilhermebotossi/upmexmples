@@ -1,0 +1,11 @@
+-Hash Anti-Tampering
+-Hash Anti-Tampering + Salt
+-"Criptografia + Salt" da Mensagem
+-Criptografia Hibrida
+-Criação da chaves
+-Wrap e unwrap das chaves
+-Compressão
+-One Way SSL
+-Two Way SSL
+
+
