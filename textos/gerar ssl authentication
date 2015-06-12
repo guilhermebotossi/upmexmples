@@ -1,0 +1,22 @@
+
+openssl genrsa -des3 -out rootCA.pem 2048
+
+openssl req -new -key keys/rootCA.pem -x509 -days 1024 -out certs/serverCert.crt -subj /CN=TMF_Group/OU=Desenvolvimento/O=TMF_Group/L=Barueiri/ST=São_Paulo/C=BR
+
+keytool -genkey -alias <alias> -keyalg RSA -keystore <nome>.jks -keypass <senha> -storepass <senha> -dname "CN=tmfgroup.com, OU=Desenvolvimento, O=TMF_Group, L=Barueiri, ST=São_Paulo, C=BR"
+
+keytool -certreq -alias JBossOneWayCert -keystore serverids.jks -keypass tmf123 -storepass tmf123 -file requests/JBoss.csr
+
+openssl x509 -req -days 365 -in requests/JBoss.csr -CA certs/serverCert.crt -CAkey keys/rootCA.pem -CAcreateserial -out certs/JBoss.crt
+
+keytool -import -alias JBossOneWayCert -file certs/JBoss.crt -keystore serverids.jks
+
+keytool -import -alias JBossRootCert -file certs/serverCert.crt -keystore trustedca.jks
+
+
+
+http://support.sas.com/resources/thirdpartysupport/v93/appservers/ConfigureJBossforSSLandClient-CertAuthforSAS9.3.pdf
+
+https://www.sslshopper.com/what-is-a-csr-certificate-signing-request.html
+
+http://linux.die.net/man/1/req
