@@ -1,0 +1,32 @@
+
+openssl genrsa -des3 -out rootCA.pem 2048
+
+openssl req -new -key keys/rootCA.pem -x509 -days 1024 -out certs/serverCert.crt -subj /CN=TMF_Group/OU=Desenvolvimento/O=TMF_Group/L=Barueiri/ST=São_Paulo/C=BR
+
+keytool -genkey -alias JBossOneWayCert -keyalg RSA -keystore server.jks -keypass tmf123 -storepass tmf123 -dname "CN=tmfgroup.com, OU=Desenvolvimento, O=TMF_Group, L=Barueiri, ST=São_Paulo, C=BR"
+
+keytool -certreq -alias JBossOneWayCert -keystore server.jks -keypass tmf123 -storepass tmf123 -file requests/JBoss.csr
+
+openssl x509 -req -days 365 -in requests/JBoss.csr -CA certs/serverCert.crt -CAkey keys/rootCA.pem -CAcreateserial -out certs/JBoss.crt
+
+keytool -import -alias JBossRootCert -file certs/serverCert.crt -keystore server.jks
+
+keytool -import -alias JBossOneWayCert -file certs/JBoss.crt -keystore server.jks
+
+keytool -import -alias JBossRootCert -file certs/serverCert.crt -keystore trustedca.jks
+
+
+
+http://zimbra.imladris.sk/download/src/HELIX-711/ZimbraServer/docs/certauth.txt
+
+http://support.sas.com/resources/thirdpartysupport/v93/appservers/ConfigureJBossforSSLandClient-CertAuthforSAS9.3.pdf
+
+https://www.sslshopper.com/what-is-a-csr-certificate-signing-request.html
+
+http://linux.die.net/man/1/req
+
+
+
+This is because the default OpenSSL configuration file uses the ./demoCA/newcerts directory for
+generating new certificates.  OpenSSL also uses certain files to keep track of the last unique
+serial number assigned to a generated certificate and an index of valid and revoked certificates.
