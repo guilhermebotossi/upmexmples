@@ -1,0 +1,5 @@
+
+EL Validator cannot run on project sso-web because Validation Builder precedes JBoss Knowledge Base Builder
+
+
+This is a eclipse project configuration problem. The validation builder is placed before the JBoss Tools Knowledge Base builder which collects the information for the validation builder. The validation builder should be the last one. Go to Project Properties -> JBoss Knowledge Base. Disable JBoss Tools Knowledge Base support there. Apply the changes. Enable JBoss Tools Knowledge Base support again. It will solve this problem. Please report a bug to https://issues.jboss.org/browse/JBIDE if you can describe how to create such a broken project.
