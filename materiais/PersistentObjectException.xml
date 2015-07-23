@@ -1,0 +1,11 @@
+Esse erro acontece quando uma entidade id é passada para persistencia
+O provider considera ela no estado de detached e ele não é capaz de recolocar a entidade no contexto de persistencia, por isso o erro ocorre
+
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: br.com.pwc.nfse.entrada.entity.negocio.NFSeEntrada
+  at org.hibernate.event.def.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:127) [:3.6.6.Final]
+  at org.hibernate.event.def.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:61) [:3.6.6.Final]
+  at org.hibernate.impl.SessionImpl.firePersist(SessionImpl.java:808) [:3.6.6.Final]
+  at org.hibernate.impl.SessionImpl.persist(SessionImpl.java:782) [:3.6.6.Final]
+  at org.hibernate.impl.SessionImpl.persist(SessionImpl.java:786) [:3.6.6.Final]
+  at org.hibernate.ejb.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:672) [:3.6.6.Final]
+  ... 264 more

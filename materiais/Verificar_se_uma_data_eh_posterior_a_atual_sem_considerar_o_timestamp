@@ -1,0 +1,23 @@
+    /**
+     * Verifica se a data informada é maior do que a atual, metodo desconsidera o timestamp
+     * @param data
+     * @return
+     */
+    private boolean isGreaterThanCurrentDate(Date data) {
+        Calendar cal = Calendar.getInstance();
+        cal.clear(Calendar.HOUR_OF_DAY);
+        cal.clear(Calendar.AM_PM);
+        cal.clear(Calendar.MINUTE);
+        cal.clear(Calendar.SECOND);
+        cal.clear(Calendar.MILLISECOND);
+
+        Calendar cal1 = Calendar.getInstance();
+        cal1.setTime(data);
+        cal1.clear(Calendar.HOUR_OF_DAY);
+        cal1.clear(Calendar.AM_PM);
+        cal1.clear(Calendar.MINUTE);
+        cal1.clear(Calendar.SECOND);
+        cal1.clear(Calendar.MILLISECOND);
+
+        return cal1.after(cal);
+    }
