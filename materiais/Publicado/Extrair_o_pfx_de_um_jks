@@ -1,0 +1,2 @@
+Extrair o pfx de um jks
+keytool -importkeystore -srckeystore bmw_2016.jks -srcstoretype JKS -destkeystore thekeystore.pfx -deststoretype PKCS12
