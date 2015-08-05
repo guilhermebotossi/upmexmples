@@ -1,1 +1,4 @@
 select * from NFSE_CAMPOS_LAYOUT_UNICO where lower(caminho_xml) like '%rps%' order by caminho_xml;
+
+Transactions
+https://docs.oracle.com/javaee/6/tutorial/doc/bncij.html
