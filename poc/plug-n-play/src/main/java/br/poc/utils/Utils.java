@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 import br.poc.dto.WsData;
 
 public class Utils {
+	
 
 	public static String base64Decode(String base64Content) {
 		return new String(Base64.getDecoder().decode(base64Content), Charset.forName("UTF-8"));
@@ -20,9 +21,5 @@ public class Utils {
 		return data;
 	}
 
-	public static void enqueue(String base64Content) {
-		//Code to queue
-		
-	}
 
 }
