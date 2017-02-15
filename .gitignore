@@ -16,3 +16,5 @@ RemoteSystemsTempFiles/
 .classpath
 .project
 .settings/
+.recommenders/
+target/
