@@ -1,9 +1,11 @@
 package br.poc.db;
 
-public interface Database {
+import br.poc.entity.AbstractEntity;
+
+public interface Database<E extends AbstractEntity> {
 	
-	public Long insert(Long id);
-	public Long find(Long id);
-	public Long delete(Long id);
+	public void insert(E entidade);
+	public E find(Long id);
+	public void delete(Long id);
 
 }
