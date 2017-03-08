@@ -26,7 +26,7 @@ public class MutationTest {
 	  assertEquals("OK", mutation.foo(true));
 	}
 	
-	//@Test
+	@Test
 	public void shouldBeOne() {
 		mutation.foo(true);
 		assertTrue(mutation.getA() == 1);
@@ -38,7 +38,7 @@ public class MutationTest {
 	  assertEquals("foo", mutation.foo2(1));
 	}
 	
-	//@Test
+	@Test
 	public void shouldReturnFooWhenGiven0() {
 	  assertEquals("foo", mutation.foo2(0));
 	}

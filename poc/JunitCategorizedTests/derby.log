@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Wed Feb 22 15:03:15 BRT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015a-66fd-d50d-000006da8888 
-on database directory memory:/E/Projetos/git/upmexmples/poc/JunitCategorizedTests/unit-testing-jpa with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Tue Mar 07 10:49:24 BRT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015a-a908-179d-00000674f958 
+on database directory memory:/E/Projetos/git/upmexmples/poc/JunitCategorizedTests/unit-testing-jpa with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/E/mvn_repo/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_112-b15
