@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
+import br.poc.adapter.DownloadAdapter;
+import br.poc.downloader.Downloader;
+
 public class StringDownloader implements Downloader {
 
 	private DownloadAdapter da;

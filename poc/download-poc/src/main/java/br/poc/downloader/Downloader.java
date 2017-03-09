@@ -1,4 +1,4 @@
-package br.poc.test;
+package br.poc.downloader;
 
 public interface Downloader {
 

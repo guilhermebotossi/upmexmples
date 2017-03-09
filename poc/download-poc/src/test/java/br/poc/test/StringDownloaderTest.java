@@ -17,6 +17,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 
+import br.poc.adapter.DownloadAdapter;
+import br.poc.downloader.Downloader;
+
 @RunWith(CdiRunner.class)
 @AdditionalClasses(StringDownloader.class)
 public class StringDownloaderTest {
