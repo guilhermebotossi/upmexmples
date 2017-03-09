@@ -36,7 +36,11 @@ public class PlasmaDTO {
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
-
 	
 	
+	@Override
+	public String toString() {
+		return "PlasmaDTO [timeTag=" + timeTag + ", density=" + density + ", speed=" + speed + ", temperature="
+				+ temperature + "]";
+	}
 }

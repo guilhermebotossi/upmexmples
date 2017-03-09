@@ -81,5 +81,20 @@ public class PlasmaMapperTest {
 		assertTrue(dto.getTemperature() == 246572);
 	}
 	
+	@Test
+	public void toString_called_succeeds() {
+		List<PlasmaDTO> listDTO = plasmaMapper.map(JSON_FINE);
+		
+		assertNotNull(listDTO);
+		assertTrue(listDTO.size() == 3);
+		
+		PlasmaDTO dto = listDTO.get(0);
+		
+		String toString = dto.toString();
+		
+		assertNotNull(toString);
+		assertEquals("PlasmaDTO [timeTag=2017-03-08T13:02, density=5.44, speed=528.5, temperature=246572.0]", toString);
+	}
+	
 
 }

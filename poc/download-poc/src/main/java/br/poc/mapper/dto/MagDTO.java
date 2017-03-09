@@ -56,6 +56,9 @@ public class MagDTO {
 		this.bt = bt;
 	}
 	
-
-
+	@Override
+	public String toString() {
+		return "MagDTO [timeTag=" + timeTag + ", bxGsm=" + bxGsm + ", byGsm=" + byGsm + ", bzGsm=" + bzGsm + ", latGsm="
+				+ latGsm + ", lonGsm=" + lonGsm + ", bt=" + bt + "]";
+	}
 }

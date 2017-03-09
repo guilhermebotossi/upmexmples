@@ -1,6 +1,8 @@
 package br.poc.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -69,7 +71,9 @@ public class MagMapperTest {
 		List<MagDTO> listDto = magMapper.map(jsonFine);
 		assertNotNull(listDto);
 		assertTrue(listDto.size() == 2);
+		
 		MagDTO dto = listDto.get(0);
+		
 		assertEquals(dto.getTimeTag().toString(), "2017-03-08T13:02");
 		assertTrue(dto.getBxGsm() == 4.31);
 		assertTrue(dto.getByGsm() == -3.52);
@@ -77,9 +81,20 @@ public class MagMapperTest {
 		assertTrue(dto.getLonGsm() == 320.74);
 		assertTrue(dto.getLatGsm() == -6.15);
 		assertTrue(dto.getBt() == 5.61);
+	}
+	
+	@Test
+	public void toString_called_succeeds() {
+		List<MagDTO> listDto = magMapper.map(jsonFine);
+		assertNotNull(listDto);
+		assertTrue(listDto.size() == 2);
 		
+		MagDTO dto = listDto.get(0);
 		
+		String toString = dto.toString();
 		
+		assertNotNull(toString);
+		assertEquals("MagDTO [timeTag=2017-03-08T13:02, bxGsm=4.31, byGsm=-3.52, bzGsm=-0.6, latGsm=-6.15, lonGsm=320.74, bt=5.61]", toString);
 	}
 
 }
