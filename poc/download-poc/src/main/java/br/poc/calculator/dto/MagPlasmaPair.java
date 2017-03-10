@@ -4,6 +4,8 @@ public class MagPlasmaPair {
 	
 	private double bzGsm;
 	private double speed;
+	private double density;
+	private double dpr;
 	
 	
 	public double getBzGsm() {
@@ -18,5 +20,19 @@ public class MagPlasmaPair {
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
+	public double getDensity() {
+		return density;
+	}
+	public void setDensity(double density) {
+		this.density = density;
+	}
+	public double getDpr() {
+		return dpr;
+	}
+	public void setDpr(double dpr) {
+		this.dpr = dpr;
+	}
+	
+	
 	
 }
