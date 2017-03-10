@@ -18,3 +18,4 @@ RemoteSystemsTempFiles/
 .settings/
 .recommenders/
 target/
+.vscode
