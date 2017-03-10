@@ -1,12 +1,9 @@
 package br.poc.calculator.dto;
 
-public class MagPlasmaPair {
-	
+public class HourlyAverage {
 	private Double bxGsm;
 	private Double byGsm;
 	private Double bzGsm;
-	private Double latGsm;
-	private Double lonGsm;
 	private Double bt;
 	private Double density;
 	private Double speed;
@@ -32,18 +29,6 @@ public class MagPlasmaPair {
 	}
 	public void setBzGsm(Double bzGsm) {
 		this.bzGsm = bzGsm;
-	}
-	public Double getLatGsm() {
-		return latGsm;
-	}
-	public void setLatGsm(Double latGsm) {
-		this.latGsm = latGsm;
-	}
-	public Double getLonGsm() {
-		return lonGsm;
-	}
-	public void setLonGsm(Double lonGsm) {
-		this.lonGsm = lonGsm;
 	}
 	public Double getBt() {
 		return bt;
@@ -88,5 +73,5 @@ public class MagPlasmaPair {
 		this.rmp = rmp;
 	}
 
-	
+
 }
