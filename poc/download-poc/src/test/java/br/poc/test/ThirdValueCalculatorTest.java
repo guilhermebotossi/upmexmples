@@ -1,8 +1,8 @@
 package br.poc.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
@@ -38,7 +38,6 @@ public class ThirdValueCalculatorTest {
 	}
 	
 	@Theory
-	@Ignore
 	public void calculate_calledWithValidArgument_succeeds(String[] data) {
 		MagPlasmaPair mpp = new MagPlasmaPair();
 		mpp.setDpr(Double.valueOf(data[9]).doubleValue());
@@ -48,7 +47,7 @@ public class ThirdValueCalculatorTest {
 		
 		double rmp = tvc.calculate(mpp);
 		
-		assertEquals(Double.valueOf(data[10]).doubleValue(), rmp, 0.00);
+		assertEquals(Double.valueOf(data[10]).doubleValue(), rmp, 0.02);
 		
 	}
 	
