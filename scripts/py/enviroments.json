@@ -1,0 +1,16 @@
+{
+    "enviroments" : [
+        {
+            "env" : "DEV",
+            "url" : "http://dev"
+        },
+        {
+            "env" : "HMG",
+            "url" : "http://hmg"
+        },
+        {
+            "env" : "PRD",
+            "url" : "http://prd"
+        }
+    ]
+}
