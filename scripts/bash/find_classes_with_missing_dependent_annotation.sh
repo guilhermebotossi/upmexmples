@@ -1,0 +1,1 @@
+find . -type f -iname *.java -not -path "*/test/*" -exec grep -L "@Dependent" {} \; | xargs grep -L "interface"
