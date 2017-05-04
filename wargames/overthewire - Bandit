@@ -1,0 +1,121 @@
+Bandit 0 -> Bandit 1
+Senha SSH : bandit0
+gbotossi@neuromancer:~$ ssh bandit0@bandit.labs.overthewire.org
+bandit0@melinda:~$ ls -la
+total 24
+drwxr-xr-x   2 root    root    4096 Nov 14  2014 .
+drwxr-xr-x 172 root    root    4096 Jul 10  2016 ..
+-rw-r--r--   1 root    root     220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root    root    3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root    root     675 Apr  9  2014 .profile
+-rw-r-----   1 bandit1 bandit0   33 Nov 14  2014 readme
+bandit0@melinda:~$ cat readme 
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+
+Bandit 1 -> Bandit 2
+Senha SSH : boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+gbotossi@neuromancer:~$ ssh bandit1@bandit.labs.overthewire.org
+bandit1@melinda:~$ ls -la
+total 24
+-rw-r-----   1 bandit2 bandit1   33 Nov 14  2014 -
+drwxr-xr-x   2 root    root    4096 Nov 14  2014 .
+drwxr-xr-x 172 root    root    4096 Jul 10  2016 ..
+-rw-r--r--   1 root    root     220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root    root    3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root    root     675 Apr  9  2014 .profile
+bandit1@melinda:~$ cat < -
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Bandit 2 -> Bandit 3
+Senha SSH : CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+gbotossi@neuromancer:~$ ssh bandit2@bandit.labs.overthewire.org
+bandit2@melinda:~$ ls -la
+total 24
+drwxr-xr-x   2 root    root    4096 Nov 14  2014 .
+drwxr-xr-x 172 root    root    4096 Jul 10  2016 ..
+-rw-r--r--   1 root    root     220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root    root    3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root    root     675 Apr  9  2014 .profile
+-rw-r-----   1 bandit3 bandit2   33 Nov 14  2014 spaces in this filename
+bandit2@melinda:~$ cat spaces\ in\ this\ filename 
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+Bandit 3 -> Bandit 4
+Senha SSH : UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+gbotossi@neuromancer:~$ ssh bandit3@bandit.labs.overthewire.org
+bandit3@melinda:~$ ls -la
+total 24
+drwxr-xr-x   3 root root 4096 Nov 14  2014 .
+drwxr-xr-x 172 root root 4096 Jul 10  2016 ..
+-rw-r--r--   1 root root  220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root root 3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root root  675 Apr  9  2014 .profile
+drwxr-xr-x   2 root root 4096 Nov 14  2014 inhere
+bandit3@melinda:~$ cat inhere/.hidden 
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+
+Bandit 4-> Bandit 5
+Senha SSH : pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+gbotossi@neuromancer:~$ ssh bandit4@bandit.labs.overthewire.org
+bandit4@melinda:~$ file inhere/*
+inhere/-file00: data
+inhere/-file01: data
+inhere/-file02: data
+inhere/-file03: data
+inhere/-file04: data
+inhere/-file05: data
+inhere/-file06: data
+inhere/-file07: ASCII text
+inhere/-file08: data
+inhere/-file09: data
+bandit4@melinda:~$ cat < inhere/-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+
+Bandit 5-> Bandit 6
+Senha SSH : koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+gbotossi@neuromancer:~$ ssh bandit5@bandit.labs.overthewire.org
+bandit5@melinda:~$ cd inhere/
+bandit5@melinda:~/inhere$ find -type f -not -executable -size 1033c -readable -exec cat {} \;
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+
+Bandit 6-> Bandit 7
+Senha SSH : DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+gbotossi@neuromancer:~$ ssh bandit6@bandit.labs.overthewire.org
+bandit6@melinda:~$ find / -type f -user bandit7 -group bandit6 -size 33c -exec cat {} \; 2>/dev/null
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+
+Bandit 7-> Bandit 8
+Senha SSH : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+gbotossi@neuromancer:~$ ssh bandit7@bandit.labs.overthewire.org
+bandit7@melinda:~$ ls -lah
+total 4.1M
+drwxr-xr-x   2 root    root    4.0K Nov 14  2014 .
+drwxr-xr-x 172 root    root    4.0K Jul 10  2016 ..
+-rw-r--r--   1 root    root     220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root    root    3.6K Apr  9  2014 .bashrc
+-rw-r--r--   1 root    root     675 Apr  9  2014 .profile
+-rw-r-----   1 bandit8 bandit7 4.0M Nov 14  2014 data.txt
+bandit7@melinda:~$ grep millionth data.txt 
+millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+
+Bandit 7-> Bandit 8
+Senha SSH : cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+gbotossi@neuromancer:~$ ssh bandit8@bandit.labs.overthewire.org
+bandit8@melinda:~$ ls -la
+total 56
+drwxr-xr-x   2 root    root     4096 Nov 14  2014 .
+drwxr-xr-x 172 root    root     4096 Jul 10  2016 ..
+-rw-r--r--   1 root    root      220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root    root     3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root    root      675 Apr  9  2014 .profile
+-rw-r-----   1 bandit9 bandit8 33033 Nov 14  2014 data.txt   
+bandit8@melinda:~$ sort data.txt | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+http://overthewire.org/wargames/bandit/bandit10.html
