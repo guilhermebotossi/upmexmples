@@ -1,0 +1,26 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{'INICIO.TITULO_RESUMO'|i18n}}</div>        
+        <div class="panel-body">
+            <md-content layout-padding ng-cloak>
+                <h5>{{inicioCtrl.mensagem}}</h5>
+                <div layout-gt-xs="">
+                    <div flex-gt-xs>
+                        <label style="margin-left: 5px; font-size: 12px">{{'APP.DATA_INICIAL'|i18n}}: </label>
+                        <md-datepicker ng-model="inicioCtrl.minDate" ng-model-options="{updateOn: 'default'}" ng-change="inicioCtrl.dateChanged()" ng-disabled="inicioCtrl.isDisable"
+                                        md-min-date="inicioCtrl.calendarMinDate" md-max-date="inicioCtrl.calendarMaxDate">                                           
+                        </md-datepicker> 
+                        <label style="margin-left: 25px; font-size: 12px">{{'APP.DATA_FINAL'|i18n}}: </label>
+                        <md-datepicker ng-model="inicioCtrl.maxDate" ng-model-options="{updateOn: 'default'}" ng-change="inicioCtrl.dateChanged()" ng-disabled="inicioCtrl.isDisable"
+                                       md-min-date="inicioCtrl.calendarMinDate" md-max-date="inicioCtrl.calendarMaxDate">                                           
+                        </md-datepicker>
+                        <!-- <span ng-show=inicioCtrl.carregando><img src="resources/images/loading.gif"/>{{inicioCtrl.mensagemCarregando}}</span> -->                              
+                        <span ng-show=inicioCtrl.carregando><img src="resources/images/loading.gif" class="loading-icon"/>{{'APP.CARREGANDO'|i18n}}</span>
+                    </div>
+                </div>
+            </md-content>           
+            <high-chart options="inicioCtrl.chartOptions">{{'APP.CARREGANDO'|i18n}}</high-chart>
+            <span style="text-align: center; font-size:14px; font-weight: bold; color: #4f4f4f; display: block;">{{'APP.DADOS_EMBRACE'|i18n}}</span>
+        </div>
+    </div>
+</div>

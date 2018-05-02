@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>SpaceWeatherSWD</artifactId>
+		<groupId>br.inpe.climaespacial.swd</groupId>
+		<version>0.0.23-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>SpaceWeatherSWD-Backend-Ear</artifactId>
+	<packaging>ear</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>br.inpe.climaespacial.swd</groupId>
+			<artifactId>SpaceWeatherSWD-Backend-Ejb</artifactId>
+			<version>0.0.23-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<version>7</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<fileNameMapping>no-version</fileNameMapping>
+					<modules>
+						<ejbModule>
+							<groupId>br.inpe.climaespacial.swd</groupId>
+							<artifactId>SpaceWeatherSWD-Backend-Ejb</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<arguments>-Dmaven.javadoc.skip=true</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<configuration>
+				    <skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>${release.repository.id}</id>
+			<url>${release.repository.url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${snapshot.repository.id}</id>
+			<url>${snapshot.repository.url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:git@gitlab.embrace.inpe.br:root/SpaceWeatherSWD.git</connection>
+		<developerConnection>scm:git:git@gitlab.embrace.inpe.br:root/SpaceWeatherSWD.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>http://gitlab.embrace.inpe.br/root/SpaceWeatherSWD.git</url>
+	</scm>
+
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.embrace.inpe.br:8080/project/Solar_Wind</url>
+	</ciManagement>
+</project>

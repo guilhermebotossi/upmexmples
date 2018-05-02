@@ -1,0 +1,153 @@
+html, body {
+    height: 100%;
+}
+
+.app.gradiente {
+    background: #000080;
+    background: -webkit-linear-gradient(#000000, #000080);
+    background: -o-linear-gradient(#000000, #000080);
+    background: -moz-linear-gradient(#000000, #000080);
+    background: linear-gradient(#000000, #000080);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#wrapper {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.app.language {
+    cursor: pointer;
+    padding: 13px;
+}
+
+.app.br, .app.en {
+    width: 30px;
+    height: 24px;
+}
+
+.panel.panel-default {
+    border-color: #a8a8a8;
+}
+
+.panel.panel-default:last-child {
+    margin-bottom: auto;
+}
+
+.links-page .links .link {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: block;
+    background-color: #e7e7e7;
+}
+
+.links-page .links .link * {
+    font-size: large;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+#container {
+    min-height: 400px;
+    margin: 1em auto;
+}
+
+#container > div {
+    min-height: 300px;
+}
+
+#normal-table tbody tr.even td {
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+#normal-table tbody tr.odd  td {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#normal-table tbody tr.header  th {
+    background-color: windowframe;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 15px;
+    text-align: center;
+}
+
+#normal-table tbody tr.even2 td {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+#normal-table tbody tr.odd2  td {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+#normal-table tbody tr.header2  th {
+    color: #fff;
+    background-color: #222;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 15px;
+    text-align: center;
+}
+
+.loading-icon {
+    vertical-align: text-bottom;
+}
+
+.highcharts-tooltip-2 {
+	margin: 0 !important;
+}
+
+.highcharts-tooltip-2 span {
+    height: 100px !important;
+    width: 250px !important;
+    max-width: 250px !important;
+    overflow: auto !important;
+    white-space: normal !important;
+}
+
+ul.forecast-legend  {
+	list-style: none;
+    padding:0;
+    margin:0;
+    margin-top: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
+ul.forecast-legend > li { 
+    padding-left: 1em; 
+    text-indent: -.7em;
+    color: #888;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+ul.forecast-legend > li:before {
+  content: "• ";
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #000;
+}
+
+ul.forecast-legend > li.green:before {
+    color: #00F500;
+}
+
+ul.forecast-legend > li.yellow:before {
+    color: #F5F500;
+}
+
+ul.forecast-legend > li.red:before {
+    color: #F50000;
+}

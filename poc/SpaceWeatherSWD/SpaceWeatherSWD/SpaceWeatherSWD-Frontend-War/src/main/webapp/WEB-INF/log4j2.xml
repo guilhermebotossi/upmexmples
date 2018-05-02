@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration package="br.inpe.climaespacial.swd.core"
+               status="INFO">
+
+    <Properties>
+        <Property name="swd-component">viewer</Property>
+        <Property name="swd-log-path">standalone/log/swd-logs</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="RollingFile"
+                             fileName="${swd-log-path}/${swd-component}-swd-info.log"
+                             filePattern="${swd-log-path}/${swd-component}-swd-info-%d{yyyy-MM-dd}.log"
+                             immediateFlush="true">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <TimeBasedTriggeringPolicy interval="1" />
+        </RollingFile>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+
+</Configuration>
